@@ -14,6 +14,7 @@ app.listen(PORT, () => {
 app.get('/health', (req, res) => {
   // throw 'error...'
   // eslint-disable-next-line no-constant-condition
+  // eslint-disable-next-line no-console
   console.log('************************************heatlth check')
   // if (true)
   //   throw 'error...*  '
