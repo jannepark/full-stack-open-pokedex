@@ -9,7 +9,8 @@ primary_region = "arn"
 [deploy]
   release_command = "npm run build"
   strategy = "canary"
-  
+  wait_timeout = "1m"
+
 [processes]
   app = "node app.js"
 
@@ -51,7 +52,7 @@ protocol = "tcp"
   method = "get"
   path = "/health"
   protocol = "http"
-  timeout = 2000
+  timeout = "30s"
   tls_skip_verify = false
   [services.http_checks.headers]
 
