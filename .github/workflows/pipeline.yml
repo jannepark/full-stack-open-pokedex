@@ -49,7 +49,7 @@ jobs:
         if: ${{ failure() && github.event_name == 'push' }}
         with:
           severity: error
-          details: Test Failed!
+          details: 'commit ${{github.event.head_commit.url}} by ${{github.triggering_actor}} broke the build'
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
   tag_release:
     needs: [simple_deployment_pipeline]
