@@ -14,8 +14,6 @@ app.listen(PORT, () => {
 app.get('/health', (req, res) => {
   // throw 'error...'
   // eslint-disable-next-line no-constant-condition
-
-  console.log('simulate lint error...')
   // if (true)
   //   throw 'error...*  '
   res.send('ok')
