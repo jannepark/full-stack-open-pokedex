@@ -9,11 +9,11 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Check the deployed service URL
-        uses: jtalk/url-health-check-action@v4
+        uses: jtalk/url-health-check-action@v1
         with:
           url: https://jp-pokedex.fly.dev/health
       - name: Notify on Health Check Success
-        uses: rjstone/discord-webhook-notify@v4
+        uses: rjstone/discord-webhook-notify@v1
         if: ${{ success() }}
         with:
           severity: info
@@ -21,7 +21,7 @@ jobs:
           description: 'Health check succeeded!'
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
       - name: Notify on Failure
-        uses: rjstone/discord-webhook-notify@v4
+        uses: rjstone/discord-webhook-notify@v1
         if: ${{ failure() }}
         with:
           severity: error
